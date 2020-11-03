@@ -13,11 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', 'SiswaCusController@index');
+Route::get('/logout', 'AuthController@logout');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::group(['prefix' => 'user'], function () {
+    
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
