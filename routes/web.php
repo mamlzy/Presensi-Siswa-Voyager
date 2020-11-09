@@ -31,3 +31,6 @@ Route::group(['prefix' => 'user'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/absen', 'SiswaCusController@create');
+
+Route::post('/absen', 'SiswaCusController@store');

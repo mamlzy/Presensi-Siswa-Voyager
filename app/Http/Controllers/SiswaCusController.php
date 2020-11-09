@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Siswa;
+use App\Presensi;
+use App\Ruang;
+use App\User;
 
 class SiswaCusController extends Controller
 {
@@ -26,7 +29,17 @@ class SiswaCusController extends Controller
      */
     public function create()
     {
-        //
+        $presensi = new Presensi;
+        $user = new User;
+
+        $siswa = Siswa::find(auth()->user()->siswa_id);
+        $kelas = Ruang::find(auth()->user()->ruang_id);
+
+        $presensi->name = $siswa->nama;
+        $presensi->kelas = $kelas->nama;
+        $presensi->save();
+        
+        return redirect('/');
     }
 
     /**
@@ -37,7 +50,15 @@ class SiswaCusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:4',
+            'kelas' => 'required',
+        ]);
+        // Input ke Table User
+        $presensi = new Presensi;
+        $presensi->name = $request->nama_depan;
+        $presensi->email = $request->email;
+        $presensi->save();
     }
 
     /**

@@ -81,7 +81,7 @@
                     <h1 class="text-center">Attendence Website</h1>
                     <h2>You can click the button below for do the attendence</h2>
 
-                    <form action="forms/contact.php" method="post" role="form" class="">
+                    {{-- <form action="/absen" method="post" role="form" class="">
                             <div class="form-group">
                                 <label for="name" class="text-white">Full Name</label>
                                 <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
@@ -92,11 +92,13 @@
                                 <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                                 <div class="validate"></div>
                             </div>
-                    </form>
-
-                    <div class="d-lg-flex mt-4">
-                        <a href="#about" class="btn-get-started mx-auto scrollto">I Present!</a>
-                    </div>
+                            <div class="d-lg-flex mt-4">
+                                <button type="submit" class="btn-get-started mx-auto scrollto">Present!</button>
+                            </div>
+                    </form> --}}
+                    
+                    <a href="/absen" class="btn-get-started mx-auto scrollto">Present!</a>
+                    
                 </div>
             </div>
         </div>
