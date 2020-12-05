@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('export', function() {
+    return view('export');
+});
+
+Route::get('coba', function () {
+    return view('coba');
+});
 
 Route::get('/', 'SiswaCusController@index');
 Route::get('/logout', 'AuthController@logout');
@@ -34,3 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/absen', 'SiswaCusController@create');
 
 Route::post('/absen', 'SiswaCusController@store');
+
+Route::get('/exportxls', 'PresensiController@exportXls');
+Route::get('/exportpdf', 'PresensiController@exportPdf');
+Route::get('/preview', 'PresensiController@preview');

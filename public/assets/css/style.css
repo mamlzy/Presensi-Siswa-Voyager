@@ -418,6 +418,34 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
+#hero .btn-export-pdf {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 37px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: #47b2e4;
+}
+
+#hero .btn-export-xls {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 37px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: #49ff49;
+}
+
 #hero .btn-get-started {
   font-family: "Jost", sans-serif;
   font-weight: 500;

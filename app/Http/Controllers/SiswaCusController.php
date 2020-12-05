@@ -17,9 +17,12 @@ class SiswaCusController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::all();
+        $name = auth()->user()->name;
+        $cek_absen = Presensi::where('nama', $name);
 
-        return view('index');
+        // dd($cek_absen);
+
+        return view('index', compact('cek_absen'));
     }
 
     /**
@@ -30,16 +33,18 @@ class SiswaCusController extends Controller
     public function create()
     {
         $presensi = new Presensi;
-        $user = new User;
+        // $user = new User;
 
         $siswa = Siswa::find(auth()->user()->siswa_id);
         $kelas = Ruang::find(auth()->user()->ruang_id);
 
-        $presensi->name = $siswa->nama;
+        $presensi->nisn = $siswa->nisn;
+        $presensi->nama = $siswa->nama;
+        $presensi->jk = $siswa->jk;
         $presensi->kelas = $kelas->nama;
         $presensi->save();
-        
-        return redirect('/');
+
+        return redirect('/coba');
     }
 
     /**
